@@ -16,17 +16,18 @@ const Header = () => {
     const navLinks = (
         <>
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/allTourist'> All Tourists Spot</NavLink></li>
+            <li><NavLink to='/allTourist'> All Blogs</NavLink></li>
             {user && (
                 <>
-                    <li><NavLink to='/addSpot'> Add Tourists Spot</NavLink></li>
-                    <li><NavLink to='/myList'> My List</NavLink></li>
+                    <li><NavLink to='/addSpot'> Add Blogs</NavLink></li>
+                    <li><NavLink to='/myList'> Featured Blogs </NavLink></li>
+                    <li><NavLink to='/myList'> Wishlist</NavLink></li>
                     <li><NavLink to='/about'>About Me</NavLink></li>
                 </>
             )}
         </>
     );
-  
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -39,8 +40,11 @@ const Header = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to='/'>
-                        <a className="text-xl md:text-3xl">Touri<span className="text-red-500">fy</span>Hub</a>
+                    <Link to='/' className="flex items-center">
+                        <div className="flex items-center space-x-2">
+                            <img className="w-10 rounded-xl" src="https://i.postimg.cc/DZ6Z0phG/logo.png" alt="" />
+                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>gh<span className="text-red-500">Le</span>arn</a>
+                        </div>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -74,14 +78,14 @@ const Header = () => {
                             </ul>
                         </div>
                         <button onClick={handleSignOut} className="btn"><a id="clickable" className="btn  my-anchor-element">Log Out</a>
-                        <Tooltip anchorSelect="#clickable" clickable>
-                            <p className="">Are You sure?</p>
-                        </Tooltip></button>
+                            <Tooltip anchorSelect="#clickable" clickable>
+                                <p className="">Are You sure?</p>
+                            </Tooltip></button>
                     </div>
                 ) : (
                     <div className="navbar-end gap-3">
                         <img className="w-10 rounded-full" src={'https://i.postimg.cc/506PW3dk/user.png'} alt="User Avatar" />
-                        <Link to='/login'> <a  className="btn">Login</a></Link>
+                        <Link to='/login'> <a className="btn">Login</a></Link>
 
                     </div>
                 )}
