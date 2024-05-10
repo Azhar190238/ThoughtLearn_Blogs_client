@@ -4,6 +4,8 @@ import UseTitle from "../Title/UseTitle";
 import Banner from "./Banner/Banner";
 import RecentBlog from "./RecentBlog/RecentBlog";
 import NewsLetter from "./NewsLetter/NewsLetter";
+import Statistics from "./Statistics/Statistics";
+import ReaderQuestion from "./ReaderQuestion/ReaderQuestion";
 
 
 const Home = () => {
@@ -23,6 +25,8 @@ const Home = () => {
         </div>
         <RecentBlog></RecentBlog>
         <NewsLetter></NewsLetter>
+        <Statistics></Statistics>
+        <ReaderQuestion></ReaderQuestion>
 
         <div className="absolute top-24 md:top-12 left-16 md:left-[350px]">
                 <button
