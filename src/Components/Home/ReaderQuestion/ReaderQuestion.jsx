@@ -85,9 +85,6 @@ const ReaderQuestion = () => {
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title text-xl font-bold">
                                 How do I start a blog?
-
-
-
                             </div>
                             <div className="collapse-content">
                                 <p>

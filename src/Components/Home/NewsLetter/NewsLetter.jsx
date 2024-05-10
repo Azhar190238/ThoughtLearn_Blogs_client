@@ -12,7 +12,7 @@ const NewsLetter = () => {
                 <div className="flex justify-center">
                     <form >
                         <div className=" rounded-full bg-white shadow-xl">
-                            <input className=" text-black text-lg px-24 py-3 focus:outline-none" type="text" placeholder="azhar73397@gmail.com" />
+                            <input className=" text-black text-lg px-24 py-3 focus:outline-none" type="email" placeholder="azhar73397@gmail.com" name="email" />
                             <button className=" py-6 px-12 rounded-r-full bg-red-600 text-white font-inter font-semibold focus:outline-none" type="button">Subscribe</button>
                         </div>
                     </form>

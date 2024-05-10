@@ -14,7 +14,7 @@ const RecentBlog = () => {
 
     return (
         <div className=" lg:mx-10">
-            {/* <h1 className="text-6xl text-center text-purple-600">Hot Hot Cold Coffee: {first8Tourists.length}</h1> */}
+           
             <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 lg:gap-8">
                 {last6Blogs.map(blog => (
                     <Blogs 
