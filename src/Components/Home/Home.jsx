@@ -1,11 +1,37 @@
 
+import { useState } from "react";
+import UseTitle from "../Title/UseTitle";
+import Banner from "./Banner/Banner";
+import RecentBlog from "./RecentBlog/RecentBlog";
+import NewsLetter from "./NewsLetter/NewsLetter";
+
 
 const Home = () => {
+    UseTitle("Home");
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+    const toggleTheme = () => {
+        setIsDarkTheme(prevTheme => !prevTheme);
+    };
+   
+
     return (
+        <div className={` ${isDarkTheme ? "bg-gray-700 text-gray-400" : "bg-white"} min-h-screen transition-colors duration-500`}>
+        <Banner></Banner>
         <div>
-             <h2>I am a man</h2>
-             <h2>I am a man</h2>
-             <h2>I am a man</h2>
+            <h1 className="text-5xl text-center p-10">Recent Blogs Are Showing Here </h1>
+        </div>
+        <RecentBlog></RecentBlog>
+        <NewsLetter></NewsLetter>
+
+        <div className="absolute top-24 md:top-12 left-16 md:left-[350px]">
+                <button
+                    className="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full focus:outline-none"
+                    onClick={toggleTheme}
+                >
+                    {isDarkTheme ? "Light" : "Dark"} Theme
+                </button>
+            </div>
         </div>
     );
 };

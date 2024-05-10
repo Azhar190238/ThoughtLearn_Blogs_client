@@ -16,12 +16,12 @@ const Header = () => {
     const navLinks = (
         <>
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/allTourist'> All Blogs</NavLink></li>
+            <li><NavLink to='/allBlog'> All Blogs</NavLink></li>
+            <li><NavLink to='/featureBlog'> Featured Blogs </NavLink></li>
             {user && (
                 <>
-                    <li><NavLink to='/addSpot'> Add Blogs</NavLink></li>
-                    <li><NavLink to='/myList'> Featured Blogs </NavLink></li>
-                    <li><NavLink to='/myList'> Wishlist</NavLink></li>
+                    <li><NavLink to='/addBlog'> Add Blogs</NavLink></li>
+                    <li><NavLink to='/wishlist'> Wishlist</NavLink></li>
                     <li><NavLink to='/about'>About Me</NavLink></li>
                 </>
             )}
@@ -43,7 +43,7 @@ const Header = () => {
                     <Link to='/' className="flex items-center">
                         <div className="flex items-center space-x-2">
                             <img className="w-10 rounded-xl" src="https://i.postimg.cc/DZ6Z0phG/logo.png" alt="" />
-                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>gh<span className="text-red-500">Le</span>arn</a>
+                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>ght<span className="text-red-500">Le</span>arn</a>
                         </div>
                     </Link>
                 </div>

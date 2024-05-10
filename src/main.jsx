@@ -14,6 +14,10 @@ import Register from './Components/Owner/Register';
 import AuthProvider from './Components/Providers/AuthProvider';
 import PrivateRoute from './Components/Providers/PrivateRoute';
 import About from './Components/About/About';
+import AddBlogs from './Components/AddBlogs/AddBlogs';
+import AllBlogs from './Components/AllBlogs/AllBlogs';
+import FeatureBlog from './Components/FeaturesBlog/FeatureBlog';
+import Wishlist from './Components/Wishlist/Wishlist';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        // loader: ()=> fetch('https://assignment-10-server-tan-sigma.vercel.app/addSpot')
+        loader: ()=> fetch('http://localhost:5000/addBlogs')
       },
       {
         path: '/login',
@@ -36,7 +40,28 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <PrivateRoute>  <About></About> </PrivateRoute>
+        element: <PrivateRoute><About></About></PrivateRoute>
+       
+      },
+      {
+        path: '/allBlog',
+        element:<AllBlogs></AllBlogs>,
+        loader: ()=> fetch('http://localhost:5000/addBlogs')
+       
+      },
+      {
+        path: '/featureBlog',
+        element:<FeatureBlog></FeatureBlog>
+       
+      },
+      {
+        path: '/addBlog',
+        element: <PrivateRoute>  <AddBlogs></AddBlogs> </PrivateRoute>
+       
+      },
+      {
+        path: '/wishlist',
+        element: <PrivateRoute>  <Wishlist></Wishlist> </PrivateRoute>
        
       },
 

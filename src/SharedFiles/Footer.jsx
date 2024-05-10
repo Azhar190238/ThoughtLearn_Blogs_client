@@ -8,7 +8,7 @@ const Footer = () => {
                     <nav className="space-y-2 mx-auto lg:mx-0">
                     <div className="flex items-center space-x-2">
                             <img className="w-10 rounded-xl" src="https://i.postimg.cc/DZ6Z0phG/logo.png" alt="" />
-                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>gh<span className="text-red-500">Le</span>arn</a>
+                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>ght<span className="text-red-500">Le</span>arn</a>
                         </div>
                         <p className="max-w-80 text-[#FFFFFF99] text-center lg:text-left">Find 27 words that mean to transmit information or requests to someone or something, such as contact, reach, communicate </p>
                         <div className="flex gap-2 mx-auto lg:mx-0">
