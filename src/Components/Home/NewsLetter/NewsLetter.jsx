@@ -26,21 +26,39 @@
 // export default NewsLetter;
 
 
-import { useState } from 'react';
-import { toast } from 'react-toastify';
+
+
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const NewsLetter = () => {
-    const [email, setEmail] = useState('');
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        
-        // Here you can add the logic to send the email to your backend or perform any other action
-        // For now, let's just display the toast message
-        toast.success("Thank you for subscribing to our newsletter!");
+
+        try {
+            const response = await fetch('http://localhost:5000/subscriber', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            const data = await response.json();
+            console.log(data);
+            if (data.insertedId) {
+                toast.success("Thank you for subscribing to our newsletter!");
+            } else {
+                throw new Error('Failed to subscribe');
+            }
+        } 
+        catch (error) {
+            console.error('Subscription Error:', error.message);
+        }
+      
     };
 
     return (
@@ -59,8 +77,6 @@ const NewsLetter = () => {
                                     type="email" 
                                     placeholder="azhar73397@gmail.com" 
                                     name="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <button 
                                     className="py-6 px-12 rounded-r-full bg-red-600 text-white font-inter font-semibold focus:outline-none" 
@@ -73,8 +89,11 @@ const NewsLetter = () => {
                     </div>
                 </div>
             </section>
+            <ToastContainer /> {/* Place the ToastContainer component outside the section */}
         </div>
     );
 };
 
 export default NewsLetter;
+
+
