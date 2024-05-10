@@ -23,27 +23,6 @@ const Blogs = ({ blog }) => {
             </div>
         );
     }
-
-    // return (
-    //     <div className="card w-96 bg-base-100 shadow-xl">
-    //         <figure className="px-10 pt-10">
-    //             <img src={photo} alt="Shoes" className="rounded-xl" />
-    //         </figure>
-    //         <div className="card-body items-center space-y-4 ">
-    //             <h2 className="card-title text-center">Title: {title}</h2>
-             
-    //             <div className="flex space-x-3">
-    //                 <p className="w-full"><span className="text-lg font-semibold">Short Description: </span>{short_description}</p>
-                    
-    //             </div> 
-    //             <div className="space-x-10">
-                
-    //                 <Link to={`/viewDetails/${_id}`} > <button className="btn  btn-primary">View Details</button></Link>
-    //                 <Link to={`/wishlist/${_id}`}> <button className="btn btn-secondary">Wishlist</button> </Link>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
     return (
         <div className="card w-96 bg-base-100 shadow-xl flex flex-col  space-y-4">
             <figure className="px-10 pt-10">
