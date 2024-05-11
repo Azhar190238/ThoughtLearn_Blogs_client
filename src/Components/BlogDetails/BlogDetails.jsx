@@ -9,7 +9,7 @@ const BlogDetails = () => {
         <div className=" bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className=" h-full">
-                    <img src={blog.photo} className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={blog.photo} className="max-w-sm md:h-[500px] rounded-lg shadow-2xl" />
                 </div>
 
                 <div className="pl-10 space-y-4 ">

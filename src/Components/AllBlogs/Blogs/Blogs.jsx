@@ -38,7 +38,7 @@ const Blogs = ({ blog }) => {
                 </div>
                 <div className="flex justify-between ">
                     <Link to={`/allBlog/${_id}`}><button className="btn btn-primary">View Details</button></Link>
-                    <Link to={`/wishlist/${_id}`}><button className="btn btn-secondary">Wishlist</button></Link>
+                    <Link to={'/wishlist'}><button className="btn btn-secondary">Wishlist</button></Link>
                 </div>
             </div>
         </div>
