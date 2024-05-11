@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
             unSubscribe();
         }
     }, [])
-
+   console.log( "USER DETAILS:", user);
     const authInfo = {
         user,
         createUser,
