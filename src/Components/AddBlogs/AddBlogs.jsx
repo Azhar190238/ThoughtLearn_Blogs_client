@@ -16,7 +16,8 @@ const AddBlogs = () => {
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const photo = form.photo.value;
-        const newBlog = { name, email, title, category, short_description, long_description, photo };
+        const userPhoto = form.userPhoto.value;
+        const newBlog = { name, email, title, category, short_description, long_description, photo, userPhoto };
         console.log(newBlog);
         fetch('http://localhost:5000/addBlogs', {
             method: 'POST',
@@ -40,7 +41,7 @@ const AddBlogs = () => {
     }
     return (
         <div>
-            <form onSubmit={handleAddBlog} className="bg-[#F4F3F0] mx-5 md:mx-20 lg:mx-40 my-10">
+            <form onSubmit={handleAddBlog} className="bg-[#F4F3F0] mx-5 md:mx-20 lg:mx-40 space-y-3 my-10">
                 <h1 className="pt-10 text-center font-sans text-3xl md:text-5xl">Add New Blog</h1>
                 <p className="pt-4 text-center px-10 lg:px-40">
                     A blog is a website where individuals or organizations regularly publish content on specific topics, arranged in reverse chronological order. It's a platform for sharing thoughts, ideas, experiences, and information with others online.</p>
@@ -90,6 +91,12 @@ const AddBlogs = () => {
                     <div className="w-full">
                         <p>Photo URL</p>
                         <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered w-full" />
+                    </div>
+                </div>
+                <div className="gap-10 mx-20">
+                    <div className="w-full">
+                        <p>User Photo URL</p>
+                        <input type="text" placeholder="User Photo URL" name="userPhoto" className="input input-bordered w-full" />
                     </div>
                 </div>
                 <div className="mx-20 pb-32 py-10">

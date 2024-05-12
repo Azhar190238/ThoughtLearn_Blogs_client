@@ -17,7 +17,7 @@ import About from './Components/About/About';
 import AddBlogs from './Components/AddBlogs/AddBlogs';
 import AllBlogs from './Components/AllBlogs/AllBlogs';
 import FeatureBlog from './Components/FeaturesBlog/FeatureBlog';
-import Wishlist from './Components/Wishlist/Wishlist';
+import Wishlist from './Components/Wishlists/Wishlists';
 import BlogDetails from './Components/BlogDetails/BlogDetails';
 import UpdatedBlog from './Components/UpdatedBlog/UpdatedBlog';
 
@@ -74,7 +74,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/wishlist',
-        element: <PrivateRoute>  <Wishlist></Wishlist> </PrivateRoute>
+        element: <PrivateRoute>  <Wishlist></Wishlist> </PrivateRoute>,
+        // loader: ()=> fetch('http://localhost:5000/wishlist')
        
       },
 

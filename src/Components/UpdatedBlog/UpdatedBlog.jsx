@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdatedBlog = () => {
     UseTitle("Updated Blog");
     const blog= useLoaderData() ;
-    const { _id, photo, title, category, short_description ,name, email, long_description } = blog;
+    const { _id, photo, title, category, short_description ,name, email, long_description, userPhoto } = blog;
     const handleUpdatedBlog = event => {
         event.preventDefault();
         event.preventDefault();
@@ -18,7 +18,8 @@ const UpdatedBlog = () => {
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const photo = form.photo.value;
-        const newBlog = { name, email, title, category, short_description, long_description, photo };
+        const userPhoto = form.userPhoto.value;
+        const newBlog = { name, email, title, category, short_description, long_description, photo, userPhoto };
         console.log(newBlog);
 
       // Send data to the server side
@@ -95,6 +96,12 @@ const UpdatedBlog = () => {
                     <div className="w-full">
                         <p>Photo URL</p>
                         <input type="text" placeholder="Photo URL" name="photo" defaultValue={photo} className="input input-bordered w-full" />
+                    </div>
+                </div>
+                <div className="gap-10 mx-20">
+                    <div className="w-full">
+                        <p>User Photo URL</p>
+                        <input type="text" placeholder="Photo URL" name="userPhoto" defaultValue={userPhoto} className="input input-bordered w-full" />
                     </div>
                 </div>
                 <div className="mx-20 pb-32 py-10">
