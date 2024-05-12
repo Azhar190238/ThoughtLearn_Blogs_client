@@ -1,23 +1,32 @@
 
 import Swal from 'sweetalert2';
 import UseTitle from '../Title/UseTitle';
+import { useContext } from 'react';
+import { authContext } from '../Providers/AuthProvider';
 
 
 
 const AddBlogs = () => {
     UseTitle("Add Blog");
+    const {user} =useContext(authContext);
     const handleAddBlog = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
         const email = form.email.value;
         const title = form.title.value;
         const category = form.category.value;
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const photo = form.photo.value;
-        const userPhoto = form.userPhoto.value;
-        const newBlog = { name, email, title, category, short_description, long_description, photo, userPhoto };
+        const newBlog = {  
+            email,
+             title, 
+             category,
+              short_description, 
+              long_description,
+               photo,
+               userName: user?.displayName,
+               userProfilePic: user?.photoURL };
         console.log(newBlog);
         fetch('http://localhost:5000/addBlogs', {
             method: 'POST',
@@ -93,12 +102,12 @@ const AddBlogs = () => {
                         <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered w-full" />
                     </div>
                 </div>
-                <div className="gap-10 mx-20">
+                {/* <div className="gap-10 mx-20">
                     <div className="w-full">
                         <p>User Photo URL</p>
                         <input type="text" placeholder="User Photo URL" name="userPhoto" className="input input-bordered w-full" />
                     </div>
-                </div>
+                </div> */}
                 <div className="mx-20 pb-32 py-10">
                     <input type="submit" value="Add Blog" className="btn btn-block bg-[#D2B48C]" />
                 </div>

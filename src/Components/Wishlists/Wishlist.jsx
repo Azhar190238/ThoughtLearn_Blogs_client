@@ -18,7 +18,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-            
+              console.log(result);
                 fetch(`http://localhost:5000/wishlist/${_id}`, {
                     method: 'DELETE'
                 })
@@ -63,7 +63,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists }) => {
                     </div>
                 </div>
                 <div className="flex justify-between ">
-                    <Link to={`/allBlog/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+                    <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                     <button onClick={ () => handleDelete(_id)} className="btn btn-secondary">Delete</button>
                 </div>
             </div>
