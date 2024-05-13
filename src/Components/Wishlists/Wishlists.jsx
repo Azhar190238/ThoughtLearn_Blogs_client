@@ -1,25 +1,26 @@
 
 import UseTitle from "../Title/UseTitle";
 import Wishlist from "./Wishlist";
-import { useContext, useEffect, useState } from "react";
-import { authContext } from "../Providers/AuthProvider";
-// import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+ 
 
 
 const Wishlists = () => {
     UseTitle("WishList");
-    const {user} = useContext(authContext);
+    // const{user}= useContext(authContext)
+  
+
     const [wishlists, setWishlists] = useState([]);
   
     useEffect(() => {
-        fetch(`http://localhost:5000/wishlist/${user?.email}`)
+        fetch(`http://localhost:5000/wishlist`)
             .then(res => res.json())
             .then(data => {
                 console.log("Received data:", data); // Check what data is received
                 setWishlists(data);
             })
             .catch(error => console.error("Error fetching data:", error)); // Log any errors
-    }, [user]);
+    }, []);
 
     return (
         <div className="lg:mx-20 mt-10">
@@ -40,3 +41,4 @@ const Wishlists = () => {
 };
 
 export default Wishlists;
+

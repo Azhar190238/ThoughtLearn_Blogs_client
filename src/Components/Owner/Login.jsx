@@ -166,5 +166,3 @@ export default Login;
 
   </div>
 </div> */}
-
-
