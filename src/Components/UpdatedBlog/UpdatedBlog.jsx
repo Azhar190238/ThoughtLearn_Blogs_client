@@ -98,12 +98,7 @@ const UpdatedBlog = () => {
                         <input type="text" placeholder="Photo URL" name="photo" defaultValue={photo} className="input input-bordered w-full" />
                     </div>
                 </div>
-                <div className="gap-10 mx-20">
-                    <div className="w-full">
-                        <p>User Photo URL</p>
-                        <input type="text" placeholder="Photo URL" name="userPhoto" defaultValue={userPhoto} className="input input-bordered w-full" />
-                    </div>
-                </div>
+
                 <div className="mx-20 pb-32 py-10">
                     <input type="submit" value="Updated Blog" className="btn btn-block bg-[#D2B48C]" />
                 </div>

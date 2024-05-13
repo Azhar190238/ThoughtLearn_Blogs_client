@@ -12,13 +12,15 @@ const AddBlogs = () => {
     const handleAddBlog = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const title = form.title.value;
         const category = form.category.value;
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const photo = form.photo.value;
-        const newBlog = {  
+        const newBlog = { 
+            name, 
             email,
              title, 
              category,
@@ -58,7 +60,7 @@ const AddBlogs = () => {
                 <div className="flex gap-4 md:gap-10 mx-5 md:mx-20 my-8">
                     <div className="md:w-1/2">
                         <p>User Name</p>
-                        <input type="text" placeholder="User Name" name="name" className="input input-bordered w-full" />
+                        <input type="text" placeholder="User Name (Optional)" name="name" className="input input-bordered w-full" />
                     </div>
                     <div className="w-1/2">
                         <p>User Email</p>
@@ -102,12 +104,6 @@ const AddBlogs = () => {
                         <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered w-full" />
                     </div>
                 </div>
-                {/* <div className="gap-10 mx-20">
-                    <div className="w-full">
-                        <p>User Photo URL</p>
-                        <input type="text" placeholder="User Photo URL" name="userPhoto" className="input input-bordered w-full" />
-                    </div>
-                </div> */}
                 <div className="mx-20 pb-32 py-10">
                     <input type="submit" value="Add Blog" className="btn btn-block bg-[#D2B48C]" />
                 </div>

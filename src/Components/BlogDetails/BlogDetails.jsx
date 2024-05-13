@@ -84,7 +84,9 @@ const BlogDetails = () => {
 
                     </div>
                     <div className="mx-auto text-xl">
-                        <Link to={`/updatedBlog/${blog._id}`}><button className="btn btn-wide btn-primary">Updated Blog</button></Link>
+                        <Link to={`/updatedBlog/${blog._id}`}>
+                        {isBlogAuthor && <button className="btn btn-wide btn-primary">Update Blog</button>}
+                        </Link>
 
                     </div>
                 </div>
