@@ -3,13 +3,13 @@ import UseTitle from "../Title/UseTitle";
 import Wishlist from "./Wishlist";
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../Providers/AuthProvider";
+// import { useParams } from "react-router-dom";
 
 
 const Wishlists = () => {
     UseTitle("WishList");
     const {user} = useContext(authContext);
     const [wishlists, setWishlists] = useState([]);
-
   
     useEffect(() => {
         fetch(`http://localhost:5000/wishlist/${user?.email}`)

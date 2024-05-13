@@ -2,10 +2,10 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Wishlist = ({ wishlist, wishlists, setWishlists }) => {
+const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
     // eslint-disable-next-line react/prop-types
-    const {_id, photo, title, category, short_description } = wishlist;
-
+    const {_id, photo, title, category, short_description ,blogId } = wishlist;
+ console.log(wishlist);
     const handleDelete = _id => {
         console.log('Deleting item with ID:', _id);
         Swal.fire({
@@ -63,7 +63,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists }) => {
                     </div>
                 </div>
                 <div className="flex justify-between ">
-                    <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+                    <Link to={`/details/${blogId}`}><button className="btn btn-primary">View Details</button></Link>
                     <button onClick={ () => handleDelete(_id)} className="btn btn-secondary">Delete</button>
                 </div>
             </div>

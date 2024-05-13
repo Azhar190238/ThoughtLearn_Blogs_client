@@ -54,7 +54,7 @@ const UpdatedBlog = () => {
                 <div className="flex gap-4 md:gap-10 mx-5 md:mx-20 my-8">
                     <div className="md:w-1/2">
                         <p>User Name</p>
-                        <input type="text" placeholder="User Name" name="name" defaultValue={name} className="input input-bordered w-full" />
+                        <input type="text" placeholder="User Name (Optional)" name="name" defaultValue={name} className="input input-bordered w-full" />
                     </div>
                     <div className="w-1/2">
                         <p>User Email</p>

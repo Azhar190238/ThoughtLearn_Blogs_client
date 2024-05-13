@@ -5,39 +5,43 @@ import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../Providers/AuthProvider";
 
+
 const BlogDetails = () => {
     UseTitle("ViewDetails");
     const blog = useLoaderData();
     const { user } = useContext(authContext);
     const [allComments, setAllComments] = useState([]);
-    const isBlogAuthor = user?.email === blog.email; // Check if the current user is the author of the blog
-
+    const isBlogAuthor = user?.email === blog.email;
+    
     useEffect(() => {
-        fetchComments();
-    }, []);
+        fetchComments(blog._id);
+    }, [blog._id]);
 
-    const fetchComments = () => {
-        fetch('http://localhost:5000/comments')
+    const fetchComments = (blogId) => {
+        fetch(`http://localhost:5000/comments/${blogId}`)
             .then(res => res.json())
             .then(data => {
                 setAllComments(data);
             })
+          
             .catch(error => console.error("Error fetching comments:", error));
+            
     };
+
 
     const handleAddComment = event => {
         event.preventDefault();
         const form = event.target;
         const commentText = form.comment.value;
-
+    
         const newComment = {
             comment: commentText,
             blogId: blog._id,
             userName: user?.displayName,
             userProfilePic: user?.photoURL // Adjust this based on your actual user object structure
         };
-
-        fetch('http://localhost:5000/comments', {
+    
+        fetch(`http://localhost:5000/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,11 +54,12 @@ const BlogDetails = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Good job!",
-                        text: "New Blog added Successfully!",
+                        text: "New Comment added Successfully!",
                         icon: "success",
                         button: "Okay!",
                     });
-                    fetchComments(); // Refresh comments after adding a new one
+                    // Update state with the new comment
+                    setAllComments(prevComments => [...prevComments, newComment]);
                 }
             })
             .catch(error => console.error("Error adding comment:", error));
