@@ -47,7 +47,7 @@ const Login = () => {
     const handlesSignInWithGoogle = () => {
         googleSignIn()
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 naviGate(area?.state ? area.state : '/');
                 Swal.fire({
                     icon: 'success',
@@ -70,7 +70,7 @@ const Login = () => {
     const handlesSignInWithGitHub = () => {
         gitHubSignIn()
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 naviGate(area?.state ? area.state : '/');
                 Swal.fire({
                     icon: 'success',

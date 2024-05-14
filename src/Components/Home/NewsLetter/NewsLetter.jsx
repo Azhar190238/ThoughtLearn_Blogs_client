@@ -49,7 +49,7 @@ const NewsLetter = () => {
             });
 
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
             if (data.insertedId) {
                 toast.success("Thank you for subscribing to our newsletter!");
             } else {
@@ -68,13 +68,13 @@ const NewsLetter = () => {
                 <div className="py-20">
                     <img className="mx-auto" src="https://i.postimg.cc/05JXPFqM/Group-61.png" alt="" />
                     <h1 className="text-black font-merriweather text-4xl">Subscribe Newsletter</h1>
-                    <p className="section7-details px-20 text-gray-600 font-inter text-lg pt-3">Thank You For Subscribing message is a great way <br /> to welcome a new subscriber. Here are some networks  who have created the perfect welcome message..</p>
+                    <p className="section7-details px-2 md:px-20 text-gray-600 font-inter text-lg pt-3">Thank You For Subscribing message is a great way <br /> to welcome a new subscriber. Here are some networks  who have created the perfect welcome message..</p>
                     <br />
                     <div className="flex justify-center">
                         <form onSubmit={handleSubmit}>
                             <div className="rounded-full bg-white shadow-xl flex">
                                 <input 
-                                    className="text-black text-lg px-24 py-3 focus:outline-none rounded-full" 
+                                    className="text-black text-lg px-2 md:px-24 py-3 focus:outline-none rounded-full" 
                                     type="email" 
                                     placeholder="azhar73397@gmail.com" 
                                     name="email"

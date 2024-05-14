@@ -6,9 +6,8 @@ import Swal from "sweetalert2";
 const UpdatedBlog = () => {
     UseTitle("Updated Blog");
     const blog= useLoaderData() ;
-    const { _id, photo, title, category, short_description ,name, email, long_description, userPhoto } = blog;
+    const { _id, photo, title, category, short_description ,name, email, long_description} = blog;
     const handleUpdatedBlog = event => {
-        event.preventDefault();
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -18,9 +17,9 @@ const UpdatedBlog = () => {
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const photo = form.photo.value;
-        const userPhoto = form.userPhoto.value;
+        const userPhoto = form.userPhoto;
         const newBlog = { name, email, title, category, short_description, long_description, photo, userPhoto };
-        console.log(newBlog);
+        // console.log(newBlog);
 
       // Send data to the server side
       fetch(`http://localhost:5000/addBlogs/${_id}`, {
@@ -32,11 +31,11 @@ const UpdatedBlog = () => {
       })
       .then(res => res.json())
       .then(data => {
-          console.log(data);
+           console.log(data);
           if(data.modifiedCount >0){
               Swal.fire({
                   title: "Good job!",
-                  text: "Tourist Spot Updated Successfully",
+                  text: "Blogs Updated Successfully",
                   icon: "success",
                   button: "Okay!",
                 });

@@ -5,9 +5,9 @@ import Swal from "sweetalert2";
 const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
     // eslint-disable-next-line react/prop-types
     const {_id, photo, title, category, short_description ,blogId } = wishlist;
- console.log(wishlist);
+//  console.log(wishlist);
     const handleDelete = _id => {
-        console.log('Deleting item with ID:', _id);
+        // console.log('Deleting item with ID:', _id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -18,16 +18,16 @@ const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-              console.log(result);
+            //   console.log(result);
                 fetch(`http://localhost:5000/wishlist/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => {
-                    console.log('Response:', res);
+                    // console.log('Response:', res);
                     return res.json();
                 })
                 .then(data => {
-                    console.log('Delete response data:', data);
+                    // console.log('Delete response data:', data);
                     if (data.deletedCount > 0) {
                         Swal.fire({
                             title: "Deleted!",

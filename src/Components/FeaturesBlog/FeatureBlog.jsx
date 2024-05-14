@@ -9,7 +9,7 @@ import { authContext } from "../Providers/AuthProvider";
 const FeatureBlog = () => {
     const featureBlogs = useLoaderData();
     const {user} = useContext(authContext);
-    console.log(user)
+    // console.log(user)
 
     //     // Sort featureBlogs based on the word count of the long_description
     featureBlogs.sort((a, b) => {

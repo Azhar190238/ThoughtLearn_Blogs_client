@@ -29,7 +29,7 @@ const AddBlogs = () => {
                photo,
                userName: user?.displayName,
                userProfilePic: user?.photoURL };
-        console.log(newBlog);
+        // console.log(newBlog);
         fetch('http://localhost:5000/addBlogs', {
             method: 'POST',
             headers: {
@@ -39,7 +39,7 @@ const AddBlogs = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Good job!",

@@ -41,9 +41,9 @@ const Header = () => {
                         </ul>
                     </div>
                     <Link to='/' className="flex items-center">
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-1 md:space-x-2">
                             <img className="w-10 rounded-xl" src="https://i.postimg.cc/DZ6Z0phG/logo.png" alt="" />
-                            <a className="text-xl md:text-3xl">Th<span className="text-red-500">ou</span>ght<span className="text-red-500">Le</span>arn</a>
+                            <a className="text-md md:text-3xl">Th<span className="text-red-500">ou</span>ght<span className="text-red-500">Le</span>arn</a>
                         </div>
                     </Link>
                 </div>
@@ -53,7 +53,7 @@ const Header = () => {
                     </ul>
                 </div>
                 {user ? (
-                    <div className="navbar-end gap-3">
+                    <div className="navbar-end gap-1 md:gap-3">
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className=" rounded-full relative">
