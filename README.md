@@ -1,9 +1,7 @@
-B9 A10 Type-01 Requirements
-My website name is : TourifyHub
-My selected category's name: Southeast Asia
+Assignment_ID: assignment_category_0006
+My website name is : ThoughtLearn
 
-
-Live link: https://tour-24-193f5.web.app/
+Live link: https://assignment-11-client-side-xi.vercel.app/
 
 
 Here are seven basic features that a land-related website might offer;
@@ -23,14 +21,15 @@ Here are seven basic features that a land-related website might offer;
 npm packages: 
  I am using here three packages like;
 
-1) Table used: React-table-library used in featured  blog page
-2) 
-
- 1) React-simple-typewriter (Which used in banner header)
+1) Table used: React-data-table used in featured  blog page
+  npm i react-data-table-component
+2) Use the Framer Motion on the home page for specific (Recent blog section)
+  npm install framer-motion
+3) React-simple-typewriter (Which used in banner header)
     npm i react-simple-typewriter
     
 
- 2) React Tooltip (Which used in log out button)
+ 4) React Tooltip (Which used in log out button)
     npm install react-tooltip
 
 3
