@@ -22,7 +22,7 @@ const UpdatedBlog = () => {
         // console.log(newBlog);
 
       // Send data to the server side
-      fetch(`http://localhost:5000/addBlogs/${_id}`, {
+      fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${_id}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ const UpdatedBlog = () => {
       })
       .then(res => res.json())
       .then(data => {
-           console.log(data);
+        //    console.log(data);
           if(data.modifiedCount >0){
               Swal.fire({
                   title: "Good job!",

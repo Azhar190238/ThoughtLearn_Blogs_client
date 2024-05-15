@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/addBlogs')
+        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
       },
       {
         path: '/login',
@@ -48,24 +48,24 @@ const router = createBrowserRouter([
       {
         path: '/allBlog',
         element:<AllBlogs></AllBlogs>,
-        loader: ()=> fetch('http://localhost:5000/addBlogs')
+        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
        
       },
       {
         path: '/details/:id',
         element: <PrivateRoute> <BlogDetails></BlogDetails> </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/addBlogs/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${params.id}`),
        
       },
       {
       path: "/updatedBlog/:id",
       element: <PrivateRoute> <UpdatedBlog></UpdatedBlog> </PrivateRoute>,
-      loader: ({params}) => fetch(`http://localhost:5000/addBlogs/${params.id}`)
+      loader: ({params}) => fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${params.id}`)
       },
       {
         path: '/featureBlog',
         element:<FeatureBlog></FeatureBlog>,
-        loader: ()=> fetch('http://localhost:5000/addBlogs')
+        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
        
       },
       {
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
       {
         path: '/wishlist',
         element: <PrivateRoute>  <Wishlist></Wishlist> </PrivateRoute>,
-        loader: ()=> fetch(`http://localhost:5000/wishlist`)
+        loader: ()=> fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist`)
        
       },
 

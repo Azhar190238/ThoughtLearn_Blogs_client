@@ -19,7 +19,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
         }).then((result) => {
             if (result.isConfirmed) {
             //   console.log(result);
-                fetch(`http://localhost:5000/wishlist/${_id}`, {
+                fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => {
@@ -31,7 +31,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
                     if (data.deletedCount > 0) {
                         Swal.fire({
                             title: "Deleted!",
-                            text: "Your Tourist Spot has been deleted.",
+                            text: "Your Blog has been deleted.",
                             icon: "success"
                         });
                         // Remove the deleted item from the wishlists array

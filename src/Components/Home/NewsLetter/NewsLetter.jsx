@@ -40,7 +40,7 @@ const NewsLetter = () => {
         const email = form.email.value;
 
         try {
-            const response = await fetch('http://localhost:5000/subscriber', {
+            const response = await fetch('https://assignment-11-server-side-eta.vercel.app/subscriber', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

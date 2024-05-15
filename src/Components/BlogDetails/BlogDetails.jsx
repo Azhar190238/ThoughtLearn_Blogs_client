@@ -18,7 +18,7 @@ const BlogDetails = () => {
     }, [blog._id]);
 
     const fetchComments = (blogId) => {
-        fetch(`http://localhost:5000/comments/${blogId}`)
+        fetch(`https://assignment-11-server-side-eta.vercel.app/comments/${blogId}`)
             .then(res => res.json())
             .then(data => {
                 setAllComments(data);
@@ -41,7 +41,7 @@ const BlogDetails = () => {
             userProfilePic: user?.photoURL // Adjust this based on your actual user object structure
         };
     
-        fetch(`http://localhost:5000/comments`, {
+        fetch(`https://assignment-11-server-side-eta.vercel.app/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

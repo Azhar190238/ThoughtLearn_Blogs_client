@@ -15,7 +15,7 @@ const Wishlists = () => {
   
     useEffect(() => {
         if(user.email){
-            fetch(`http://localhost:5000/wishlist/${user.email}`)
+            fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist/${user?.email}`, {credentials: 'include'})
             .then(res => res.json())
             .then(data => {
                 // console.log("Received data:", data); // Check what data is received
@@ -27,6 +27,7 @@ const Wishlists = () => {
 
     return (
         <div className="lg:mx-20 mt-10">
+            <h2 className="mx-auto text-3xl text-center font-semibold mb-5">Below is a list of all my wishlists</h2>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {wishlists.map(wishlist => (
                     <Wishlist
