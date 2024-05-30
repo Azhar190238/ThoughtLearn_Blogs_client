@@ -15,7 +15,7 @@ const Wishlists = () => {
   
     useEffect(() => {
         if(user.email){
-            fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist/${user?.email}`, {credentials: 'include'})
+            fetch(`http://localhost:5000/wishlist/${user?.email}`, {credentials: 'include'})
             .then(res => res.json())
             .then(data => {
                 // console.log("Received data:", data); // Check what data is received

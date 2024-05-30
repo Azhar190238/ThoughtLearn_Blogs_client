@@ -20,7 +20,8 @@ import FeatureBlog from './Components/FeaturesBlog/FeatureBlog';
 import Wishlist from './Components/Wishlists/Wishlists';
 import BlogDetails from './Components/BlogDetails/BlogDetails';
 import UpdatedBlog from './Components/UpdatedBlog/UpdatedBlog';
-
+import SubscriberList from './Components/SubsriberList/SubscriberList';
+// https://assignment-11-server-side-eta.vercel.app
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
+        loader: ()=> fetch('http://localhost:5000/addBlogs')
       },
       {
         path: '/login',
@@ -48,24 +49,24 @@ const router = createBrowserRouter([
       {
         path: '/allBlog',
         element:<AllBlogs></AllBlogs>,
-        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
+        loader: ()=> fetch('http://localhost:5000/addBlogs')
        
       },
       {
         path: '/details/:id',
         element: <PrivateRoute> <BlogDetails></BlogDetails> </PrivateRoute>,
-        loader: ({params}) => fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/addBlogs/${params.id}`),
        
       },
       {
       path: "/updatedBlog/:id",
       element: <PrivateRoute> <UpdatedBlog></UpdatedBlog> </PrivateRoute>,
-      loader: ({params}) => fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${params.id}`)
+      loader: ({params}) => fetch(`http://localhost:5000/addBlogs/${params.id}`)
       },
       {
         path: '/featureBlog',
         element:<FeatureBlog></FeatureBlog>,
-        loader: ()=> fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs')
+        loader: ()=> fetch('http://localhost:5000/addBlogs')
        
       },
       {
@@ -76,9 +77,15 @@ const router = createBrowserRouter([
       {
         path: '/wishlist',
         element: <PrivateRoute>  <Wishlist></Wishlist> </PrivateRoute>,
-        loader: ()=> fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist`)
+        loader: ()=> fetch(`http://localhost:5000/wishlist`)
        
       },
+      {
+        path: '/subscriber',
+        element: <PrivateRoute> <SubscriberList></SubscriberList>  </PrivateRoute>,
+        loader: ()=> fetch(`http://localhost:5000/subscriber`)
+       
+      }
 
       
     ]

@@ -19,7 +19,7 @@ const Wishlist = ({ wishlist, wishlists, setWishlists  }) => {
         }).then((result) => {
             if (result.isConfirmed) {
             //   console.log(result);
-                fetch(`https://assignment-11-server-side-eta.vercel.app/wishlist/${_id}`, {
+                fetch(`http://localhost:5000/wishlist/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => {

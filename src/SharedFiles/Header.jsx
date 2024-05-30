@@ -22,7 +22,11 @@ const Header = () => {
                 <>
                     <li><NavLink to='/addBlog'> Add Blogs</NavLink></li>
                     <li><NavLink to='/wishlist'> Wishlist</NavLink></li>
+                    <li><NavLink to='/subscriber'>Subscriber List</NavLink></li>
                     <li><NavLink to='/about'>About Me</NavLink></li>
+                    
+ 
+                    
                 </>
             )}
         </>

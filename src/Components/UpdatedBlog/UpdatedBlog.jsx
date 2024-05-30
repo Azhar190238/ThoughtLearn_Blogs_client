@@ -22,7 +22,7 @@ const UpdatedBlog = () => {
         // console.log(newBlog);
 
       // Send data to the server side
-      fetch(`https://assignment-11-server-side-eta.vercel.app/addBlogs/${_id}`, {
+      fetch(`http://localhost:5000/addBlogs/${_id}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'

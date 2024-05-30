@@ -30,7 +30,7 @@ const AddBlogs = () => {
                userName: user?.displayName,
                userProfilePic: user?.photoURL };
         // console.log(newBlog);
-        fetch('https://assignment-11-server-side-eta.vercel.app/addBlogs', {
+        fetch('http://localhost:5000/addBlogs', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

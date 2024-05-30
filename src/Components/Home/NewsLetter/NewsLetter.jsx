@@ -29,23 +29,32 @@
 
 
 
+import { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { authContext } from '../../Providers/AuthProvider';
 
 const NewsLetter = () => {
+    const {user}= useContext(authContext)
 
     const handleSubmit = async event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
+        const newSubscriber ={
+            email,
+            userName: user?.displayName,
+            userProfilePic: user?.photoURL
+        }
+        console.log('New Subscriber',newSubscriber)
 
         try {
-            const response = await fetch('https://assignment-11-server-side-eta.vercel.app/subscriber', {
+            const response = await fetch('http://localhost:5000/subscriber', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email })
+                body: JSON.stringify(newSubscriber)
             });
 
             const data = await response.json();
