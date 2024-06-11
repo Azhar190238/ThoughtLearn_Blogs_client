@@ -4,11 +4,11 @@ My website name is : ThoughtLearn
 Live link: https://assignment-11-client-side-xi.vercel.app/
 
 
-Here are seven basic features that a land-related website might offer;
+Here are seven basic features that a blogs-related website might offer;
  
- 1) Home Page: This will be the landing page with a brief description of your application and maybe  carousel or cards displaying some popular Blogs.
+ 1) Home Page: This will be the blog page with a brief description of your application and maybe  carousel or cards displaying some popular Blogs.
  2) All Blog Page: This page will display all the blogs available in your database.
- 3) Add Tourist Spot Page: This page will allow users to add new blogs.
+ 3) Add Blog Page: This page will allow users to add new blogs.
  4) Wishlist: A private/protected route where users can see the blogs they've added to the database.
  5) Update/Delete: Functionality to update or delete a blog, typically accessible from the My List page.
 
