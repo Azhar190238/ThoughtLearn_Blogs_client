@@ -1,7 +1,6 @@
-Assignment_ID: assignment_category_0006
-My website name is : ThoughtLearn
 
-Live link: https://assignment-11-client-side-xi.vercel.app/
+<b>My website name is : </b>ThoughtLearn </br>
+<b> Live link : </b> https://assignment-11-client-side-xi.vercel.app/ </br>
 
 
 Here are seven basic features that a blogs-related website might offer;
